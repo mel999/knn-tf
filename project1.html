@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Forecasting Earnings Using k-Nearest Neighbors –</title>
+  </head>
+
+  <body>
+    <main>
+      <p>
+        Welcome to my project where i work with KNN algortimh to forcast
+        company's earnings.
+      </p>
+
+      <section id="project1">
+        <form action="#project1Details" method="get">
+          <label for="fearnings"
+            >Enter your company's last two years' earnings</label
+          >
+          <input type="text" id="fearnings" /><br /><br />
+          <input type="submit" value="Submit" class="linkShow" />
+        </form>
+      </section>
+
+      <section class="expandDetails" id="project1Details">
+        <p>
+          2.We begin by identifying the sample of all available firm-years in
+          our dataset with both current and lagged earnings data reported during
+          2001 to 2010. Next, we identify the k nearest neighbors – i.e., the k
+          firm-years in this sample that are the closest match to firm i in
+          terms of current and lagged earnings. Finally, we set our forecast of
+          firm ’ earnings in 2012 equal to the the median of the nearest
+          neighbors’ lead earnings.3
+        </p>
+      </section>
+
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>
