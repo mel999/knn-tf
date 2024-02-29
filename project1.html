@@ -10,30 +10,62 @@
 
   <body>
     <main>
-      <p>
-        Welcome to my project where i work with KNN algortimh to forcast
-        company's earnings.
-      </p>
+      <section>
+        <p>
+          Welcome to my project where I work with the KNN algortimh to forcast
+          company's earnings.
+        </p>
+        <h3>Project 1</h3>
+        <p>
+          Status - complete, but needs more refining, hence it is work in
+          progress (WIP)
+        </p>
+
+        <button onclick="myFunction()">Background</button>
+
+        <div id="myDIV" style="display: none">
+          I have been studying machine learning and my first project involves
+          using the Knn algorithm to forecast a company's annual earnings. My
+          goal is to predict a company's earnings based on the earnings of other
+          companies with a similar financial history. I have been referring to
+          this article -
+          <a
+            target="_blank"
+            href="https://www.uts.edu.au/sites/default/files/2021-01/Forecasting%20Earnings%20Using%20k-Nearest%20Neighbor%20Matching.pdf"
+          >
+            Forecasting Earnings Using k-Nearest Neighbor Matching
+          </a>
+          and this course -
+          <a
+            target="_blank"
+            href="https://www.udemy.com/course/machine-learning-with-javascript/"
+          >
+            Machine Learning with Javascript
+          </a>
+          for guidance on feature selection, dataset construction, and model
+          logic.
+        </div>
+      </section>
 
       <section id="project1">
-        <form action="#project1Details" method="get">
-          <label for="fearnings"
+        <form action="p1Calc.html" method="post">
+          <label for="earnings"
             >Enter your company's last two years' earnings</label
           >
-          <input type="text" id="fearnings" /><br /><br />
-          <input type="submit" value="Submit" class="linkShow" />
+          <input type="number" id="earnings" /><br /><br />
+          <input type="submit" value="Submit" class="generate" />
         </form>
       </section>
 
       <section class="expandDetails" id="project1Details">
-        <p>
-          2.We begin by identifying the sample of all available firm-years in
-          our dataset with both current and lagged earnings data reported during
-          2001 to 2010. Next, we identify the k nearest neighbors – i.e., the k
-          firm-years in this sample that are the closest match to firm i in
-          terms of current and lagged earnings. Finally, we set our forecast of
-          firm ’ earnings in 2012 equal to the the median of the nearest
-          neighbors’ lead earnings.3
+        <p style="font-style: italic">
+          Quote: We begin by identifying the sample of all available firm-years
+          in our dataset with both current and lagged earnings data reported
+          during 2009 to 2011. Next, we identify the k nearest neighbors - i.e.,
+          the k firm-years in this sample that are the closest match to firm i
+          in terms of current and lagged earnings. Finally, we set our forecast
+          of firm's earnings in 2012 equal to the the median of the nearest
+          neighbors' lead earnings.
         </p>
       </section>
 
