@@ -1,3 +1,5 @@
+"use strict";
+
 require("@tensorflow/tfjs-node");
 const tf = require("@tensorflow/tfjs");
 const loadCSV = require("./load-csv");
@@ -26,25 +28,24 @@ function knn(features, labels, predictionPoint, k) {
 let { features, labels, testFeatures, testLabels } = loadCSV("Untitled7.csv", {
   shuffle: true, //
   splitTest: 10, //testFeatures, testLabels earnings for the 10
-  dataColumns: ["PAT Cr 09", "PAT Cr 10", "MCAP 10", "Revenue Cr 10"], //features
-  labelColumns: ["PAT Cr 11"], //labels,earnings of 2016
+  dataColumns: [
+    "PAT Cr 09",
+    "PAT Cr 10",
+    //"Revenue Cr 10",
+    // "Difference between PAT Cr 09 & 10",
+  ],
+  labelColumns: ["PAT Cr 11"],
 });
 
 features = tf.tensor(features);
 labels = tf.tensor(labels);
-features.print();
+console.log(tf.getBackend());
+//features.print();
+//labels.print();
 
 testFeatures.forEach((testPoint, i) => {
   const result = knn(features, labels, tf.tensor(testPoint), 10);
   const err = (testLabels[i][0] - result) / testLabels[i][0];
   console.log("Error", err * 100);
-  console.log("guess", result, testLabels[i][0]);
+  //console.log("guess", result, testLabels[i][0]);
 });
-
-//console.log("Guess", result, testLabels[0][0]); //[row][dollar value]
-
-//console.log(tf.tensor(testFeatures[0]).print()); //predictionPoint
-
-//matching recent in anual earnings to historical earning sequance neigbouras.
-//predictiong for 2017
-//so 2015-2016 earnings to 2014-2015 earnings of neigbours

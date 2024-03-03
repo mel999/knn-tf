@@ -1,10 +1,21 @@
 "use strict";
 
+var commonjs = require("./commonjs");
+
+require("@tensorflow/tfjs-node");
+
+//const { tf } = require("@tensorflow/tfjs-node");
+const tf = require("@tensorflow/tfjs");
+
+//const { tf } = require("@tensorflow/tfjs");
+
+const loadCSV = require("./load-csv");
+const { shuffle } = require("lodash");
+
 const project1Details = document.querySelector(".expandDetails");
 const generate = document.querySelector(".generate");
-//from project1:     <input type="submit" value="Submit" class="linkShow" />
-const earningsEl = document.getElementById("earnings");
-earningsEl.textContent = "input";
+const earningsEl1 = document.getElementById("earningsY2");
+const earningsEl2 = document.getElementById("earningsY2");
 
 function myFunction() {
   var x = document.getElementById("myDIV");
@@ -14,6 +25,9 @@ function myFunction() {
     x.style.display = "none";
   }
 }
+
+//console.log(document.querySelector(".message").textContent);
+//console.log("hello");
 
 /*
 const init = function () {
