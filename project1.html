@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <a class="ll" class="dec" href="index.html">Home</a>
+    <a class="ll" href="aboutme.html">About me</a>
     <title>Mel's Portfolio</title>
   </head>
 
-  <body>
+  <body class="body2">
     <main>
       <section>
-        <p>
-          Welcome to my project where I work with the KNN algortimh to forcast
+        <h1 style="font-size: 35px">Project 1</h1>
+        <p class="ff">Project status - work in progress (WIP)</p>
+        <p style="margin-top: 15px">
+          Welcome to my project where I work with the KNN algorithm to forcast a
           company's earnings.
         </p>
-        <h3>Project 1</h3>
-        <p>Status - work in progress (WIP)</p>
 
-        <button onclick="myFunction()">Background</button>
+        <details onclick="myFunction1()">
+          <summary style="font-size: large">Project background</summary>
+        </details>
 
         <div id="myDIV" style="display: none">
           I have been studying machine learning and my first project involves
@@ -26,50 +34,84 @@
           goal is to predict a company's earnings based on the earnings of other
           companies with a similar financial history. I have used this article -
           <a
+            class="dec"
             target="_blank"
             href="https://www.uts.edu.au/sites/default/files/2021-01/Forecasting%20Earnings%20Using%20k-Nearest%20Neighbor%20Matching.pdf"
           >
-            Forecasting Earnings Using k-Nearest Neighbor Matching
-          </a>
+            Forecasting Earnings Using k-Nearest Neighbor Matching 2020</a
+          >
+          <i class="fa fa-external-link"></i>
           and this course -
           <a
+            class="dec"
             target="_blank"
             href="https://www.udemy.com/course/machine-learning-with-javascript/"
           >
-            Machine Learning with Javascript
-          </a>
+            Machine Learning with Javascript </a
+          ><i class="fa fa-external-link"></i>
           for guidance on feature selection, dataset construction, and model
           logic.
         </div>
       </section>
 
       <section id="project1">
-        <form action="p1Calc.html" method="post">
-          <label for="earnings"
-            >Enter your company's last two years' earnings to predict it's
+        <!--<form action="p1Calc.html" method="post">
+          
+        onsubmit="myFunction2()"  -->
+
+        <form action="p1Calc.html" method="get" id="form1">
+          <label
+            >Enter your company's last two years' earnings to predict its
             earnings for the next year</label
           >
-          <input type="number" id="earningsY1" value="" />
-          <input type="number" id="earningsY2" value="" />
-          <input type="submit" value="Submit" class="generate" />
+
+          <input
+            oninput="myFunction3()"
+            placeholder="year 1"
+            class="dd"
+            type="number"
+            id="earningsY1"
+            name="earningsY1"
+            value=""
+          />
+          <input
+            placeholder="year 2"
+            class="dd"
+            type="number"
+            id="earningsY2"
+            name="earningsY2"
+            value=""
+          />
+          <input
+            onclick="myFunction2()"
+            type="submit"
+            value="Submit"
+            class="earningPoints"
+          />
         </form>
-      </section>
 
-      <section>
-        <p class="message">the new tensor flow array will go here: ___</p>
-      </section>
-
-      <section class="expandDetails" id="project1Details">
-        <p style="font-style: italic">
-          Quote: We begin by identifying the sample of all available firm-years
-          in our dataset with both current and lagged earnings data reported
-          during 2009 to 2011. Next, we identify the k nearest neighbors - i.e.,
-          the k firm-years in this sample that are the closest match to firm i
-          in terms of current and lagged earnings. Finally, we set our forecast
-          of firm's earnings in 2012 equal to the the median of the nearest
-          neighbors' lead earnings.
+        <p id="e0" class="gg">
+          Thank you.<br />
+          These details can be used in predicting your company's future
+          earnings.<br />
+          You have entered:
+        </p>
+        <p id="e1" class="gg">here</p>
+        <p id="e2" class="gg">here</p>
+        <p id="e4" class="gg">
+          🛑 Status update: development in progress...<br />
+          Current challenge faced in this project - inability to run node.js
+          code in browser. Faced with 'require is not defined' error message.<br />
         </p>
       </section>
+      <p>
+        My github repository for this project's files can be accessed here:
+        <a class="dec" target="_blank" href="https://github.com/mel999/knn-tf">
+          github</a
+        >
+      </p>
+
+      <section class="expandDetails" id="project1Details"></section>
     </main>
     <script src="script.js"></script>
   </body>
