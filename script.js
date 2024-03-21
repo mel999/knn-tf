@@ -5,7 +5,7 @@ require("@tensorflow/tfjs-node");
 const tf = require("@tensorflow/tfjs");
 const loadCSV = require("./load-csv");
 const { shuffle } = require("lodash");*/
-document.title = "Mel's tech skills";
+document.title = "Mel";
 
 const project1Details = document.querySelector(".expandDetails");
 const earningPoints = document.querySelector(".earningPoints");
